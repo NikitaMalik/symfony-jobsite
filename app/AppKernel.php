@@ -7,7 +7,7 @@ class AppKernel extends Kernel {
 
     public function registerBundles() {
         $bundles = [
-            
+
             new JMS\SerializerBundle\JMSSerializerBundle(),
             new Nelmio\CorsBundle\NelmioCorsBundle(),
             new FOS\RestBundle\FOSRestBundle(),
