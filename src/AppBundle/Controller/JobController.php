@@ -33,7 +33,10 @@ class JobController extends Controller {
         $job->setExperience("7-10 years");
         $job->setLocation("Bengaluru");
         $job->setSalary("Best in Industry");
-        $job->setDatetime(new \DateTime("now"));
+        $job->setStartDate(new \DateTime("now"));
+        $date = new \DateTime("now");
+        $date->add(new \DateInterval('P5M4DT4H3M2S'));
+        $job->setEndDate($date);
 
         // tells Doctrine you want to (eventually) save the Product (no queries yet)
         $em->persist($job);

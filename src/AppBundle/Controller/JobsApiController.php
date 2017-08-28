@@ -55,8 +55,11 @@ class JobsApiController extends FOSRestController {
         $data->setDescription($desc);
         $data->setLocation($loct);
         $data->setExperience($expr);
-        $data->setSalary($salr);
-        $data->setDatetime(new \DateTime("now"));
+        $data->setSalary($salr);      
+        $data->setStartDate(new \DateTime("now"));
+        $date = new \DateTime("now");
+        $date->add(new \DateInterval('P5M4DT4H3M2S'));
+        $data->setEndDate($date);
         $em->persist($data);
         $em->flush();
         $response = array("jobId" => $data->getId(), "msg" => "Job Added Successfully");

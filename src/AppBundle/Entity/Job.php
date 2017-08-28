@@ -26,7 +26,11 @@ class Job {
     private $description;
     
     /** @ORM\Column(type="datetime") */
-    private $datetime;
+    private $startDate;
+    
+    
+    /** @ORM\Column(type="datetime") */
+    private $endDate;
     
     /** @ORM\Column(type="text") */
     private $location;
@@ -49,8 +53,12 @@ class Job {
         return $this->description;
     }
 
-    function getDatetime() {
-        return $this->datetime;
+    function getStartDate() {
+        return $this->startDate;
+    }
+
+    function getEndDate() {
+        return $this->endDate;
     }
 
     function getLocation() {
@@ -77,8 +85,12 @@ class Job {
         $this->description = $description;
     }
 
-    function setDatetime($datetime) {
-        $this->datetime = $datetime;
+    function setStartDate($startDate) {
+        $this->startDate = $startDate;
+    }
+
+    function setEndDate($endDate) {
+        $this->endDate = $endDate;
     }
 
     function setLocation($location) {
